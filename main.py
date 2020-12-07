@@ -8,6 +8,7 @@ import cv2
 def video_reader():
     cam = cv2.VideoCapture(0)
     detector = cv2.QRCodeDetector()
+    
     while True:
         _, img = cam.read()
         data, bbox, _ = detector.detectAndDecode(img)
@@ -39,6 +40,7 @@ def generateFromFile():
 
 if __name__ == '__main__':
     args = []
+    
     for arg in sys.argv:
         args.append(arg)
     if (len(args) == 1):
